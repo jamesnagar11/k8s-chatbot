@@ -6,7 +6,7 @@ def parse_html(file_path: str):
     Parses HTML content using BeautifulSoup.
     Cleans scripts, styles, and extracts readable text for RAG.
     """
-    with logfire.span("📄 HTML Parsing", filename=file_path):
+    with logfire.span("HTML Parsing", filename=file_path):
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
@@ -27,5 +27,5 @@ def parse_html(file_path: str):
             
             return text_clean
         except Exception as e:
-            logfire.error(f"❌ HTML Parse Failed: {e}")
+            logfire.error(f"HTML Parse Failed: {e}")
             raise e

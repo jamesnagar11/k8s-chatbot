@@ -25,7 +25,7 @@ def parse_pdf(file_path: str) -> str:
 
             # Fallback: use pdfplumber for any pages pypdf returned blank
             if blank_pages:
-                logfire.info(f"pypdf returned blank on pages {blank_pages} — retrying with pdfplumber.")
+                logfire.info(f"pypdf returned blank on pages {blank_pages} - retrying with pdfplumber.")
                 try:
                     import pdfplumber
                     with pdfplumber.open(file_path) as pdf:
